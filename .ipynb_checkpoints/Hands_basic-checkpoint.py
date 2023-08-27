@@ -2,7 +2,7 @@
  "cells": [
   {
    "cell_type": "code",
-   "execution_count": 1,
+   "execution_count": null,
    "id": "02e93b47-060f-4900-bea6-3647c7b5e2df",
    "metadata": {},
    "outputs": [],
@@ -15,7 +15,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 2,
+   "execution_count": null,
    "id": "b9d5db62-3a44-4da7-97fd-8a16fd27c49e",
    "metadata": {
     "tags": []
@@ -71,7 +71,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 3,
+   "execution_count": null,
    "id": "f568ca1e-1c97-461e-8a02-a50ff99aee4a",
    "metadata": {},
    "outputs": [],
@@ -113,26 +113,12 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 4,
+   "execution_count": null,
    "id": "a2ef8e11-d53d-467a-9cf4-0ba4c0e5c60b",
    "metadata": {
     "tags": []
    },
-   "outputs": [
-    {
-     "ename": "error",
-     "evalue": "OpenCV(4.8.0) D:\\a\\opencv-python\\opencv-python\\opencv\\modules\\imgproc\\src\\color.cpp:182: error: (-215:Assertion failed) !_src.empty() in function 'cv::cvtColor'\n",
-     "output_type": "error",
-     "traceback": [
-      "\u001b[1;31m---------------------------------------------------------------------------\u001b[0m",
-      "\u001b[1;31merror\u001b[0m                                     Traceback (most recent call last)",
-      "Cell \u001b[1;32mIn[4], line 2\u001b[0m\n\u001b[0;32m      1\u001b[0m \u001b[38;5;28;01mif\u001b[39;00m \u001b[38;5;18m__name__\u001b[39m \u001b[38;5;241m==\u001b[39m \u001b[38;5;124m\"\u001b[39m\u001b[38;5;124m__main__\u001b[39m\u001b[38;5;124m\"\u001b[39m:\n\u001b[1;32m----> 2\u001b[0m     \u001b[43mmain\u001b[49m\u001b[43m(\u001b[49m\u001b[43m)\u001b[49m\n",
-      "Cell \u001b[1;32mIn[3], line 14\u001b[0m, in \u001b[0;36mmain\u001b[1;34m()\u001b[0m\n\u001b[0;32m      9\u001b[0m \u001b[38;5;28;01mwhile\u001b[39;00m \u001b[38;5;28;01mTrue\u001b[39;00m:\n\u001b[0;32m     10\u001b[0m \n\u001b[0;32m     11\u001b[0m     \u001b[38;5;66;03m#reading the basic image\u001b[39;00m\n\u001b[0;32m     12\u001b[0m     success , img \u001b[38;5;241m=\u001b[39m cap\u001b[38;5;241m.\u001b[39mread()\n\u001b[1;32m---> 14\u001b[0m     \u001b[43mdetector\u001b[49m\u001b[38;5;241;43m.\u001b[39;49m\u001b[43mfindHands\u001b[49m\u001b[43m(\u001b[49m\u001b[43mimg\u001b[49m\u001b[43m)\u001b[49m\n\u001b[0;32m     15\u001b[0m     lmlist \u001b[38;5;241m=\u001b[39m detector\u001b[38;5;241m.\u001b[39mfindPosition(img)\n\u001b[0;32m     17\u001b[0m     \u001b[38;5;28;01mif\u001b[39;00m \u001b[38;5;28mlen\u001b[39m(lmlist) \u001b[38;5;241m!=\u001b[39m\u001b[38;5;241m0\u001b[39m:\n",
-      "Cell \u001b[1;32mIn[2], line 16\u001b[0m, in \u001b[0;36mhandDetector.findHands\u001b[1;34m(self, img, draw)\u001b[0m\n\u001b[0;32m     15\u001b[0m \u001b[38;5;28;01mdef\u001b[39;00m \u001b[38;5;21mfindHands\u001b[39m(\u001b[38;5;28mself\u001b[39m, img,draw \u001b[38;5;241m=\u001b[39m \u001b[38;5;28;01mTrue\u001b[39;00m):\n\u001b[1;32m---> 16\u001b[0m     \u001b[38;5;28mself\u001b[39m\u001b[38;5;241m.\u001b[39mimgRGB \u001b[38;5;241m=\u001b[39m \u001b[43mcv2\u001b[49m\u001b[38;5;241;43m.\u001b[39;49m\u001b[43mcvtColor\u001b[49m\u001b[43m(\u001b[49m\u001b[43mimg\u001b[49m\u001b[43m,\u001b[49m\u001b[43mcv2\u001b[49m\u001b[38;5;241;43m.\u001b[39;49m\u001b[43mCOLOR_BGR2RGB\u001b[49m\u001b[43m)\u001b[49m\n\u001b[0;32m     17\u001b[0m     \u001b[38;5;28mself\u001b[39m\u001b[38;5;241m.\u001b[39mresults \u001b[38;5;241m=\u001b[39m \u001b[38;5;28mself\u001b[39m\u001b[38;5;241m.\u001b[39mhands\u001b[38;5;241m.\u001b[39mprocess(\u001b[38;5;28mself\u001b[39m\u001b[38;5;241m.\u001b[39mimgRGB)\n\u001b[0;32m     18\u001b[0m     \u001b[38;5;66;03m#print(results.multi_hand_landmarks)   #will print co-ordinatates of hand\u001b[39;00m\n\u001b[0;32m     19\u001b[0m \n\u001b[0;32m     20\u001b[0m \n\u001b[0;32m     21\u001b[0m     \u001b[38;5;66;03m#Getting the image and masking the nodes on it\u001b[39;00m\n",
-      "\u001b[1;31merror\u001b[0m: OpenCV(4.8.0) D:\\a\\opencv-python\\opencv-python\\opencv\\modules\\imgproc\\src\\color.cpp:182: error: (-215:Assertion failed) !_src.empty() in function 'cv::cvtColor'\n"
-     ]
-    }
-   ],
+   "outputs": [],
    "source": [
     "if __name__ == \"__main__\":\n",
     "    main()"
